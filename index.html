@@ -5,28 +5,23 @@
   <meta charset="utf-8">
   <title>Twitch TV</title>
 
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/footable-bootstrap/css/footable.bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/custom.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script type="text/javascript" src="twitch.js" async></script>
-  <link rel="stylesheet" href="assets/css/footable-bootstrap.latest/css/footable.bootstrap.min.css">
 </head>
 
 <body>
   <main class="container-fluid">
-    <header>
-      <div class="text-centered">
-        <img class="img-fluid rounded" src="http://socialbarrel.com/wp-content/uploads/2017/04/twitch.png" alt="Twich TV banner">
-      </div>
+    <header class="container-fluid">
     </header>
-    <div class="">
-      <div >
-        <ul class="status">
-          <li class="all">All</li>
-          <li class="online">Online</li>
-          <li class="offline">Offline</li>
-        </ul>
-      </div>
+    <div class="container-fluid tabStrip">
+      <ul class="status nav nav-tabs text-center">
+        <li class="all col-sm-3 grey"><a href="#"><i class="fa fa-truck fa-2x col-sm-12"></i><span class="col-sm-12">All</span></a></li>
+        <li class="online col-sm-3 orange"><a href="#"><i class="fa fa-ship fa-2x col-sm-12"></i><span class="col-sm-12">Online</span></a></li>
+        <li class="offline col-sm-3 blue"><a href="#"><i class="fa fa-building fa-2x col-sm-12"></i><span class="col-sm-12">Offline</span></a></li>
+      </ul>
     </div>
     <div class="">
       <h3>List of Players</h3>

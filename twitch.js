@@ -13,12 +13,15 @@ function getStatus(type, name) {
       return;
     }
     return resp.json().then(json => {
-      console.log(json);
       return (json.stream === null) ? "Offline" : "Online";
     });
   });
 }
 
+/**
+ * Arguements: type; string, "stream", "user", "channels"
+ *             channels; array of channels, users, streams
+ */
 function getChannels(type, channels) {
   $.each(channels, function(index, name) {
     let promise = getStatus(type, name);
@@ -28,7 +31,7 @@ function getChannels(type, channels) {
       let status = $("<td>");
       chn.text(name);
       status.text(s);
-      tr.prop("class", s.toLowerCase());
+      tr.addClass(s.toLowerCase());
       tr.append(chn);
       tr.append(status);
       table.append(tr);
@@ -38,16 +41,15 @@ function getChannels(type, channels) {
 }
 
 $(".status").click(function(event) {
-  let st = event.target.className;
-  console.log(st);
+  let st = event.target.innerHTML.toLowerCase();
   if(st !== "all"){
     st = "." + st;
-    console.log(st);
     $("tr").hide();
     $(st).show();
   }
   else $("tr").show();
 });
+
 $(document).ready(function() {
   getChannels("streams", channels);
 });
